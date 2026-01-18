@@ -9,3 +9,5 @@ console.log(b)
 
 let c='c'
 console.log(typeof(c))
+
+document.getElementById("heading").innerHTML="learn javascript"
