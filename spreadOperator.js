@@ -1,7 +1,8 @@
-const arr=[1,2,3,4,5]
+const arr = [1,2,3,4]
 
-// const[a,b,...rest]=arr
-// console.log(a,b,rest)
+const objFromArr = {...arr}
+console.log(objFromArr)
 
-const[a,,,b,...rest]=arr
-console.log(a,b,rest)
+const obj={name:'raju',age:28}
+const newobj={...obj,name:'javascript'}
+console.log(newobj)
