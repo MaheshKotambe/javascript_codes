@@ -1,3 +1,85 @@
+// lucky sevens
+
+function lucky_sevens(arr) {
+    // Check every 3 consecutive elements
+    for (let i = 0; i < arr.length - 2; i++) {
+        if (arr[i] + arr[i + 1] + arr[i + 2] === 7) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+
+// even index
+
+function evenIndices(arr) {
+    let result = [];
+
+    for (let i = 0; i < arr.length; i += 2) {
+        result.push(arr[i]);
+    }
+
+    return result;
+}
+
+// unique categories
+
+function uniqueCategories(arr) {
+    let categories = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        let category = arr[i][1];
+
+        // Add only if not already present
+        if (!categories.includes(category)) {
+            categories.push(category);
+        }
+    }
+
+    return categories;
+}
+
+// string sorting
+
+function sortString(strArray) {
+  // return the sorted array
+  return strArray.sort();
+}
+
+// word reversals
+
+function reverseWords(str){
+    let words = str.split(" ");
+
+    let reversed = words.map(word => word.split("").reverse().join(""));
+
+    console.log(reversed.join(" "));
+}
+
+// multiple
+
+const Multiple = (N, Arr) => {
+  let result = [];
+
+  for (let i = 0; i < N; i++) {
+    let count = 0;
+
+    for (let j = i + 1; j < N; j++) {
+      if (Arr[j] % Arr[i] === 0) {
+        count++;
+      }
+    }
+
+    result.push(count);
+  }
+
+  return result;
+};
+
+-------------------------------
+
 // filter band
 
 function filterBands(arr, genre) {
