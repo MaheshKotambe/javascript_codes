@@ -1,3 +1,147 @@
+//print array recursively
+
+function printArrayRecursive(arr, i, n) {
+  if (i >= n) {
+    return;
+  }
+
+  process.stdout.write(arr[i] + " ");
+
+  printArrayRecursive(arr, i + 1, Number(n));
+}
+
+//print range recursively
+
+function printXY(x, y) {
+  if (x > y) {
+    return;
+  }
+
+  process.stdout.write(x + (x === y ? "" : " "));
+
+  printXY(x + 1, y);
+}
+
+//time conversion
+
+function timeConversion(s) {
+  let period = s.slice(-2); // AM or PM
+  let time = s.slice(0, 8).split(":");
+
+  let hour = parseInt(time[0]);
+
+  if (period === "AM") {
+    if (hour === 12) {
+      hour = "00";
+    } else {
+      hour = hour.toString().padStart(2, "0");
+    }
+  } else { // PM
+    if (hour !== 12) {
+      hour = (hour + 12).toString();
+    } else {
+      hour = "12";
+    }
+  }
+
+  console.log(`${hour}:${time[1]}:${time[2]}`);
+}
+
+
+//palindrome number checker
+
+readline.question('', n => {
+  let reversed = n.split('').reverse().join('');
+  
+  console.log(n === reversed ? "true" : "false");
+  
+  readline.close();
+});
+
+
+//reverse string word wise
+
+function reverseWords(s) {
+    return s.trim().split(" ").reverse().join(" ");
+}
+
+//count pairs with difference k
+
+function Pairs(arr, k) {
+  let set = new Set(arr);
+  let count = 0;
+
+  for (let num of arr) {
+    if (set.has(num + k)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+//js dynamic function input
+
+function takeMultipleNumbersAndAdd(arr) {
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  return sum;
+}
+
+//Case-Specific Sorting
+
+function sortCase(S) {
+  let upper = [];
+  let lower = [];
+
+  for (let ch of S) {
+    if (ch >= 'A' && ch <= 'Z') {
+      upper.push(ch);
+    } else {
+      lower.push(ch);
+    }
+  }
+
+  upper.sort();
+  lower.sort();
+
+  let result = "";
+  let u = 0, l = 0;
+
+  for (let ch of S) {
+    if (ch >= 'A' && ch <= 'Z') {
+      result += upper[u++];
+    } else {
+      result += lower[l++];
+    }
+  }
+
+  return result;
+}
+
+// Replace element
+
+function replaceArray(arr, n) {
+  if (n === 1) return [arr[0]];
+
+  let result = new Array(n);
+
+  result[0] = arr[0] * arr[1];
+
+  for (let i = 1; i < n - 1; i++) {
+    result[i] = arr[i - 1] * arr[i + 1];
+  }
+
+  result[n - 1] = arr[n - 1] * arr[n - 2];
+
+  return result;
+}
+
+-----------------------
 // lucky sevens
 
 function lucky_sevens(arr) {
